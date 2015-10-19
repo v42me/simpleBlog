@@ -1,0 +1,53 @@
+{% extends 'layout.html' %}
+
+{% block title %}My Page{% endblock %}
+
+{% block head %}
+  {% parent %}
+  <link rel="stylesheet" href="stylesheets/index.css">
+{% endblock %}
+
+{% block content %}
+
+<header>this is header</header>
+<aside>
+	<form id="form">
+
+	<hr>
+	
+	
+	<hr>
+	<button id='query' type="button">Query</button>
+	
+ 
+</form>
+
+</aside>
+<article>
+	<p></p>
+	<div></div>
+</article>
+<footer>this is footer</footer>
+{% endblock %}
+
+
+{% block script %}
+<script type="text/javascript">
+
+	$(document).ready(function(){
+		
+
+      $("#query").click(function(){
+      	   console.log($('#form').serialize())
+
+$.post("info",$('#form').serialize(),function(data,status){
+	console.log(data)
+	$('article p').text(data["length"])
+	$('article div').text(data["name"])
+},"json")
+
+  });
+});
+</script>
+
+{% endblock %}

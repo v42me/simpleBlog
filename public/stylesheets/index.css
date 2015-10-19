@@ -1,0 +1,19 @@
+header{
+	padding:20px;
+	background-color: #ccc;
+}
+footer{
+	padding: 20px;
+	background-color: #eee;
+	clear: both;
+}
+aside{
+	float: left;
+	background: #999;
+	width: 30%;
+	height: 100%;
+}
+
+article{
+	margin-left: 31%;
+}
